@@ -4,7 +4,7 @@
          "es5",
          "es6"
       ],
-      "target": "es5",
+      "target": "ESNext",
       "module": "commonjs",
       "moduleResolution": "node",
       "outDir": "./build",
@@ -13,6 +13,7 @@
       "sourceMap": true,
       "esModuleInterop": true,
       "typeRoots" : ["./src/types", "./node_modules/@types"],
-      "skipLibCheck": true
+      "skipLibCheck": true,
+      "strict": false
    }
 }

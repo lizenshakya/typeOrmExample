@@ -2,10 +2,14 @@ import express from "express";
 
 declare global {
   namespace Express {
-    interface Request {
+    export interface Request {
         debugId: string
         ipAddress: string,
         device: string
     }
+    
   }
+  export interface Error {
+    status?: number;
+}
 }
