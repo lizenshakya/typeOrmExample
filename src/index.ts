@@ -10,6 +10,7 @@ dotenv.config({ path: path.join(__dirname+'/config/.env') });
 import router from './routes'
 import sanitize  from './utils/sanitizer';
 const app = express();
+import ORMConfig from "./ormconfig";
 
 app.use(cors());
 app.options('*', cors());
@@ -56,7 +57,7 @@ app.use((error: Error, req: Request, res: Response, next) => {
 })
   
 const PORT = process.env.PORT|| 5000;
-
-createConnection().then(async  => {
+console.log(ORMConfig, '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>');
+createConnection(ORMConfig).then(async  => {
   app.listen(PORT, () => console.log(`server listing to port ${PORT}`))
 }).catch(error => console.log(error));

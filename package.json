@@ -25,7 +25,7 @@
    "scripts": {
       "start": "ts-node src/index.ts",
       "typeorm": "ts-node ./node_modules/typeorm/cli.js",
-      "build": "tsc",
+      "build": "rm -rf build && tsc -p .",
       "dev": "nodemon --exec ts-node src/index.ts",
       "build-dev": "cp ./src/config/.env ./build/config/.env && tsc",
       "start:prod": "node ./build/index.js"

@@ -14,6 +14,7 @@
       "esModuleInterop": true,
       "typeRoots" : ["./src/types", "./node_modules/@types"],
       "skipLibCheck": true,
-      "strict": false
+      "strict": false,
+      "declaration": true
    }
 }
