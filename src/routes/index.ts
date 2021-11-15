@@ -1,12 +1,11 @@
-import { Request, Response, Router } from 'express';
+import { Router } from 'express';
+
+import companyInfo from '../controller/companyInfo';
+import product from '../controller/product';
 
 const router = Router();
 
-router.post("/users", async(req: Request, res: Response) => {
-    console.log({body: req.body, header: req.query}, "??????????????????????????")
-    console.log("hello from here")
-    res.status(200);
-    res.send('Hello from the world World');
-})
+router.use('/companyInfo', companyInfo);
+router.use('/product', product);
 
 export default router;

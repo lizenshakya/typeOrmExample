@@ -57,7 +57,6 @@ app.use((error: Error, req: Request, res: Response, next) => {
 })
   
 const PORT = process.env.PORT|| 5000;
-console.log(ORMConfig, '>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>');
 createConnection(ORMConfig).then(async  => {
   app.listen(PORT, () => console.log(`server listing to port ${PORT}`))
 }).catch(error => console.log(error));
