@@ -1,23 +1,23 @@
 import {ConnectionOptions} from "typeorm";
 
 const srcConfig =  [
-     "src/entities/**/*.ts"
+     "src/entity/**/*.ts"
    ]
  
  const distConfig = [
-     "dist/entities/**/*.js"
+     "build/entity/**/*.js"
    ]
 
-export default {
+const config: ConnectionOptions = {
     "type": "mysql",
-    "host": 'mysql',
+    "host": 'localhost',
     "port": 3306,
     "username": "admin",
     "password": "Admin@123",
     "database": "test",
     "synchronize": false,
     "logging": true,
-    "entities": process.env.TS_NODE ? srcConfig: distConfig,
+    "entities": srcConfig, //process.env.TS_NODE ? srcConfig: distConfig,
     "migrations": [
        "src/migration/**/*.ts"
     ],
@@ -29,4 +29,7 @@ export default {
        "migrationsDir": "src/migration",
        "subscribersDir": "src/subscriber"
     }
- } as ConnectionOptions;
+ };
+ console.log(config, ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+
+ export = config;
